@@ -1,12 +1,12 @@
-ARG BASE_TAG=focal
+ARG BASE_TAG=latest
 
-FROM aghost7/ubuntu-dev-base:$BASE_TAG
+FROM albandiguer/ubuntu-dev-base:$BASE_TAG
 
-USER aghost-7
+USER albandiguer
 
 ENV XDG_CONFIG_HOME "$HOME/.config"
 
-COPY ./powerline "$HOME/.config/powerline"
+# COPY ./powerline "$HOME/.config/powerline"
 
 COPY ./tmux.conf "$HOME/.config/tmux/tmux.conf"
 
