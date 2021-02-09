@@ -44,13 +44,13 @@ install-powerline() {
 sudo apt-get update
 
 # Fix file permissions from the copy
-sudo chown -R aghost-7:aghost-7 "$HOME/.config"
-sudo chown aghost-7:aghost-7 /home/aghost-7/.config/tmux/tmux.conf
+sudo chown -R albandiguer:albandiguer "$HOME/.config"
+sudo chown albandiguer:albandiguer /home/albandiguer/.config/tmux/tmux.conf
 
 # Need to update package cache...
 sudo apt-get update
 
-install-powerline
+# install-powerline
 
 install-tmux
 
