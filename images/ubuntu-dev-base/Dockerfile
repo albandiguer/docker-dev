@@ -2,7 +2,9 @@ ARG UBUNTU_RELEASE=focal
 
 FROM ubuntu:${UBUNTU_RELEASE}
 
-LABEL MAINTAINER jonathan.boudreau.92@gmail.com
+LABEL MAINTAINER alban.diguer@gmail.com
+
+ENV USER albandiguer
 
 ARG UBUNTU_RELEASE
 
@@ -11,8 +13,8 @@ ENV UBUNTU_RELEASE=${UBUNTU_RELEASE}
 # TODO: user name should be customisable?
 RUN apt-get update && \
 	apt-get install sudo -y && \
-	adduser --disabled-password --gecos '' aghost-7 && \
-	adduser aghost-7 sudo && \
+	adduser --disabled-password --gecos '' $USER && \
+	adduser $USER sudo && \
 	echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
 	apt-get autoremove -y && \
 	apt-get clean && \
@@ -40,13 +42,10 @@ COPY build.sh /tmp/build.sh
 RUN bash /tmp/build.sh && \
 	rm /tmp/build.sh
 
-ENV USER aghost-7
 
-ENV HOME /home/aghost-7
+ENV HOME "/home/$USER"
 
-WORKDIR /home/aghost-7
-
-USER aghost-7
+WORKDIR $HOME
 
 COPY ./inputrc "$HOME/.inputrc"
 
