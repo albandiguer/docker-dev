@@ -40,9 +40,6 @@ export DEBIAN_FRONTEND=noninteractive
 echo 'Etc/UTC' | sudo tee /etc/timezone
 apt-install dnsutils
 
-# Install bash tab completion.
-apt-install bash-completion
-
 # ssh
 apt-install openssh-client
 
@@ -68,11 +65,16 @@ apt-install git
 # Required for so many languages this will simply be included by default.
 apt-install build-essential pkgconf
 
-# Add timestamp to history.
-echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
-
 # Alias for tree view of commit history.
 git config --system alias.tree "log --all --graph --decorate=short --color --format=format:'%C(bold blue)%h%C(reset) %C(auto)%d%C(reset)\n         %C(blink yellow)[%cr]%C(reset)  %x09%C(white)%an: %s %C(reset)'"
+
+# zsh
+apt-install zsh
+# set ZSH as the default login shell for the user you’re logged in
+sudo usermod -s /usr/bin/zsh albandiguer
+# add https://github.com/ohmyzsh/ohmyzsh, this install in /root/
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 
 # cache is useless to keep
 apt-get autoremove -y

@@ -28,6 +28,3 @@ fbind () {
 }
 
 fbind -c
-
-alias nyan=nyancat
-alias parrot='curl parrot.live'
