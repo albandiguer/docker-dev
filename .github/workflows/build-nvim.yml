@@ -27,20 +27,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build & push ubuntu-dev-base
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: images/ubuntu-dev-base
-          tags: albandiguer/ubuntu-dev-base:latest
-          push: true
-      - name: Build & push power-tmux
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: images/power-tmux
-          tags: albandiguer/power-tmux:latest
-          push: true
       - name: Build & push image
         id: docker_build
         uses: docker/build-push-action@v2

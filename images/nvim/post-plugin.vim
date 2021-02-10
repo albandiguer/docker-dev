@@ -1,43 +1,8 @@
 
-" Buffer delete all others (delete all except current one)
-command Bdo BufOnly
-cabbrev bdo BufOnly
-
-" Visual diff command.
-command Ldiffthis Linediff
-cabbrev ldiffthis Linediff
-
-command Ldiffoff Linediffreset
-cabbrev ldiffoff LinediffReset
-
-" Load colors! On the initial install this will error out, so make it silent 
+" Load colors! On the initial install this will error out, so make it silent
 " so it installs without issues.
-silent! colorscheme gruvbox
+silent! colorscheme lodestone
 set background=dark
-
-" Add a mapping for the NERDTree command, so you can just type :T to open
-command T NERDTree
-
-" abbreviate T to t
-cabbrev t T
-
-" Enable the powerline fonts.
-let g:airline_powerline_fonts = 1
-
-" Show the buffers at the top
-let g:airline#extensions#tabline#enabled = 1
-
-" Show the buffer numbers so I can `:b 1`, etc
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" Aside from the buffer number, I literally just need the file name, so
-" strip out extraneous info.
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" Set the theme for vim-airline
-autocmd VimEnter * AirlineTheme gruvbox
-
-let g:NERDTreeMouseMode = 3
 
 " Use spaces instead just for yaml
 autocmd Filetype yaml setl expandtab
@@ -45,46 +10,8 @@ autocmd Filetype yaml setl expandtab
 " Enable spell checking for markdown files
 autocmd Filetype markdown setl spell
 
-" Highlighting on top of the error gutter is a bit overkill...
-let g:ale_set_highlights = 0
-
-" I want errors to be styled a bit more like neomake
-let g:ale_sign_error = '✖'
-highlight ALEErrorSign ctermfg=DarkRed ctermbg=NONE
-
-" Same with warnings
-let g:ale_sign_warning = '⚠'
-highlight ALEWarningSign ctermfg=Yellow ctermbg=NONE
-
 " Force the emoji to show up in the completion dropdown
 let g:github_complete_emoji_force_available = 1
-
-" Rely on tmux for the repl integration to work
-let g:slime_target = 'tmux'
-
-" This will ensure that the second panel in the current
-" window is used when I tell slime to send code to the
-" repl.
-if exists("$TMUX")
-	let s:socket_name = split($TMUX, ',')[0]
-
-	let g:slime_default_config = {
-					\ 'socket_name': s:socket_name,
-					\ 'target_pane': ':.1'
-					\ }
-endif
-
-" I dont like the default mappings of this plugin...
-let g:slime_no_mappings = 1
-
-" Ctrl+s will send the paragraph over to the repl.
-nmap <c-s> <Plug>SlimeLineSend
-
-" Ctrl+x will send the highlighted section over to the repl.
-xmap <c-s> <Plug>SlimeRegionSend
-
-" Make it so that ctrlp ignores files in .gitignore
-let g:ctrlp_user_command = '(git status --short | awk "{ print \$2 }"; git ls-files -- %s) | sort -u'
 
 " Make custom github domains configurable
 let g:fugitive_github_domains = ['github.com']
@@ -92,19 +19,102 @@ if ! empty($GITHUB_ENTERPRISE_DOMAINS)
 	call extend(g:fugitive_github_domains, split($GITHUB_ENTERPRISE_DOMAINS, ','))
 end
 
-fu! g:YcmKeybindings(filetype) abort
-	" When using `gd`, this will jump to either the definition
-	" or declaration (depending on what the cursor is on).
-	exec 'au FileType ' . a:filetype . ' nnoremap <buffer> gd :YcmCompleter GoTo<CR>'
-	" Inverse of jumping to the declaration, jumps to everything referencing it
-	" instead.
-	exec 'au FileType ' . a:filetype . ' nnoremap <buffer> gD :YcmCompleter GoToReferences<CR>'
-	" Fetch documentation when using `\gd`.
-	exec 'au FileType ' . a:filetype . ' nnoremap <buffer> K :YcmCompleter GetDoc<CR>'
-endfu
-
 " skip certain file types
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " point to c implementation of editorconfig
 let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ALE syntax checkers
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:ale_completion_delay=200
+let g:ale_completion_enabled = 0
+let g:ale_echo_cursor = 0 " fasten things a lot (see vim profile)
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--no-semi --single-quote'
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_lint_delay = 200 " (in ms)
+let g:ale_lint_on_enter = 0 " on opening a file
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_open_list=0
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠ '
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['tsserver', 'tslint'],
+      \ 'python': ['flake8'],
+      \ 'sql': ['sqlint'],
+      \ 'terraform': ['tflint']
+      \ }
+let g:ale_fixers = {
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['prettier'],
+      \ 'html': ['prettier'],
+      \ 'markdown': ['prettier'],
+      \ 'haskell': ['brittany'],
+      \ 'python': ['black'],
+      \ 'sql': ['sqlfmt'],
+      \ 'terraform': ['fmt'],
+      \ '*': ['remove_trailing_lines', 'trim_whitespace']
+      \ }
+let g:ale_python_black_options = '--line-length 79' " line length 88 by default
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap ; :Buffers<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>r :Tags<CR>
+nmap <Leader>b :Buffers<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bufonly config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap ' :Bonly<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ag the silver searcher
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" change the default engine for search
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
+  let g:grep_cmd_opts = '--line-numbers --noheading'
+  let g:ackprg = 'ag --vimgrep'
+  " let g:ackprg = 'ag --nogroup --nocolor --column'
+endif"
+
+nnoremap K :Ack! "\b<cword>\b" <CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom Nerdtree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open nerdtree
+map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
+" close vim if only open window is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM MARKDOWN PREVIEW
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let vim_markdown_preview_github=1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COMPLETION CONFIG
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()

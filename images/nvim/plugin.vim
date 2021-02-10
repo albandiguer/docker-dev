@@ -1,66 +1,28 @@
-" This file contains configurations which are specific to the plugins
-" loaded. Its in a seperate file since these need to be places after the 
-" plug#end call.
-
-" Download a better colorscheme
-Plug 'morhetz/gruvbox'
-
-" Better file system browser
-Plug 'scrooloose/nerdtree'
-
-" Run tests straight from vim
-Plug 'janko-m/vim-test'
-
-" Nerdtree git support!
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" Allows you to run git commands from vim
 Plug 'tpope/vim-fugitive'
+Plug 'ntpeters/vim-better-whitespace' "Strip white spaces
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'dense-analysis/ale' " Syntax checker https://vimawesome.com/plugin/ale
+Plug 'christoomey/vim-tmux-navigator' "navigate seamlessly between vim and tmux
+Plug 'Raimondi/delimitMate' " Close parenthesis quotes etc
+Plug 'tpope/vim-commentary'
 
-" Github integration
-Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim' " fuzzy search
 
-" Fuzzy file name searcher
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'schickling/vim-bufonly' "Close inactive buffers
+Plug 'mileszs/ack.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'heavenshell/vim-jsdoc', { 'do': 'make install', 'for': ['javascript', 'typescript', 'javascript.jsx']}
+Plug 'tmhedberg/matchit' " Jump to end of block
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'scrooloose/nerdtree'
+Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim
+Plug 'mattn/gist-vim'
 
-" Adds the ability to close all except the current buffer
-Plug 'vim-scripts/BufOnly.vim'
+Plug 'lodestone/lodestone.vim'
 
-" Unfortunately, neovim doesn't support bindeval, so I can't use powerline.
-Plug 'vim-airline/vim-airline'
-
-" Download powerline theme for the statusbar.
-Plug 'vim-airline/vim-airline-themes'
-
-" Async linter!
-Plug 'w0rp/ale'
-
-" Minimalist mode.
-Plug 'junegunn/goyo.vim'
-
-" Required for sql completion
-Plug 'vim-scripts/dbext.vim'
-
-" Autocomplete for github names, links, emoji, etc.
-Plug 'AGhost-7/github-complete.vim', { 'branch': 'feature-force-emoji', 'for': 'markdown' }
-
-" Better repl integration (sends selections to repl).
-Plug 'jpalardy/vim-slime'
-
-" Allows to diff a visual selection.
-Plug 'AndrewRadev/linediff.vim'
-
-" For running unit tests written in vimL
-Plug 'junegunn/vader.vim'
-
-" Git commit browser
-Plug 'junegunn/gv.vim'
-
-" Gitlab integration for fugitive
-Plug 'shumphrey/fugitive-gitlab.vim'
+" Autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Automatically clear search highlight
 Plug 'junegunn/vim-slash'
-
-" Handle indentation for all projects
-Plug 'editorconfig/editorconfig-vim'
