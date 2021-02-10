@@ -53,4 +53,7 @@ RUN sudo chown "$USER":"$USER" "$HOME/.inputrc"
 COPY ./zshrc "$HOME/.zshrc"
 RUN sudo chown "$USER":"$USER" "$HOME/.zshrc"
 
+COPY ./gitconfig "$HOME/.gitconfig"
+RUN sudo chown "$USER":"$USER" "$HOME/.gitconfig"
+
 CMD ["/usr/bin/zsh"]

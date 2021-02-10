@@ -21,8 +21,5 @@ Plug 'mattn/gist-vim'
 
 Plug 'lodestone/lodestone.vim'
 
-" Autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Automatically clear search highlight
-Plug 'junegunn/vim-slash'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocomplete
+Plug 'junegunn/vim-slash' " Automatically clear search highlight

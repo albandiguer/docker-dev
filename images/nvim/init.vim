@@ -39,6 +39,13 @@ set incsearch
 
 set termguicolors
 
+set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
+set numberwidth=5 " number of columns used for line number display
+set showtabline=2
+set winwidth=79
+
+set nocursorline
+
 " This will close the current buffer without closing the window
 command Bd bp|bd #
 
@@ -64,6 +71,21 @@ set foldmethod=marker
 " Let the linter / formatter take care of additional line breaks and the end
 " of the file.
 set nofixendofline
+
+map Q <Nop> " disable Ex mode
+
+" Remap leader
+let mapleader=","
+
+set showmatch " when a bracket is inserted, briefly show the matching one
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" REMOVE ARROW KEYS USE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
