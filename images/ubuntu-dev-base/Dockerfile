@@ -56,4 +56,7 @@ RUN sudo chown "$USER":"$USER" "$HOME/.zshrc"
 COPY ./gitconfig "$HOME/.gitconfig"
 RUN sudo chown "$USER":"$USER" "$HOME/.gitconfig"
 
+COPY ./gitignore "$HOME/.gitignore"
+RUN sudo chown "$USER":"$USER" "$HOME/.gitignore"
+
 CMD ["/usr/bin/zsh"]

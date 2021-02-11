@@ -16,7 +16,6 @@ sudo chown -R "$USER:$USER" "$HOME/.config/nvim"
 sudo chown "$USER:$USER" "$HOME/.editorconfig"
 
 # Install neovim
-sudo apt-get update
 apt-install neovim -y
 
 # Install neovim python api.
