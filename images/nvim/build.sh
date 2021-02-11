@@ -44,6 +44,8 @@ apt-install editorconfig
 # Install the silver searcher
 apt-install silversearcher-ag
 
+# Bye ugly vim themes
+sudo mv /usr/share/nvim/runtime/colors /usr/share/nvim/runtime/colors.bkp
 # Cleanups
 sudo apt-get purge software-properties-common -y
 sudo apt-get autoremove -y
