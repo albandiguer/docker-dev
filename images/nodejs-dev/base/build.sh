@@ -14,7 +14,7 @@ done
 git clone https://github.com/nodenv/nodenv.git $NODENV_ROOT
 git clone https://github.com/nodenv/node-build.git "$NODENV_ROOT"/plugins/node-build
 
-# compile dynamic bash extension
+# compile dynamic sh extension
 cd $NODENV_ROOT && src/configure && make -C src
 
 # for ubuntu
