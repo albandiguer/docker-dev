@@ -59,4 +59,9 @@ RUN sudo chown "$USER":"$USER" "$HOME/.gitconfig"
 COPY ./gitignore "$HOME/.gitignore"
 RUN sudo chown "$USER":"$USER" "$HOME/.gitignore"
 
+# Remove bash files
+RUN rm "$HOME/.bashrc"
+RUN rm "$HOME/.profile"
+RUN rm "$HOME/.bash_logout"
+
 CMD ["/usr/bin/zsh"]

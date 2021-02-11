@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Print out every line being run
 set -x
@@ -37,15 +37,6 @@ install-tmux-plugin-manager() {
   /home/albandiguer/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
 
-install-powerline() {
-	# POWER TMUX
-	sudo pip3 install powerline-status
-
-	# Make git status extra nice :)
-	sudo pip3 install powerline-gitstatus
-}
-
-
 sudo apt-get update
 
 # Fix file permissions from the copy
@@ -55,18 +46,13 @@ sudo chown albandiguer:albandiguer /home/albandiguer/.config/tmux/tmux.conf
 # Need to update package cache...
 sudo apt-get update
 
-# install-powerline
-
+# Tmux
 install-tmux
 install-tmux-plugin-manager
 
 # Add fzf fuzzy finder
 git clone https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
-
-# Add bashrc addons for powerline and etc.
-# cat /tmp/bashrc-additions.sh >> "$HOME/.bashrc"
-# sudo rm /tmp/bashrc-additions.sh
 
 # Cleanup cache
 sudo apt-get clean

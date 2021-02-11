@@ -34,6 +34,9 @@ apt-install xclip
 # Man pages on base debian image aren't installed...
 apt-install man-db
 
+# Shorter man pages
+apt-install tldr
+
 # For dig, etc. On ubuntu focal, tzdata is also getting installed, so gotta
 # work around that.
 export DEBIAN_FRONTEND=noninteractive
