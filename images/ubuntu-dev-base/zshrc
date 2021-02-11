@@ -26,10 +26,6 @@ _has_truecolor() {
   }'
 }
 
-# Faster keyboard
-defaults write -g InitialKeyRepeat -int 11 # lowest via ux is 15
-defaults write -g KeyRepeat -int 1 # lowest via ux is  2
-
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # aliases, plugins and exports
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
