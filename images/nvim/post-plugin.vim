@@ -111,10 +111,3 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " VIM MARKDOWN PREVIEW
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let vim_markdown_preview_github=1
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COMPLETION CONFIG
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()

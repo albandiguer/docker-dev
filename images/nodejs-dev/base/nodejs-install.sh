@@ -1,22 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
 
-. ~/.nvm/nvm.sh
-
-set -e
-
-nvm install "$1"
-nvm alias default stable
-
-# needed to work around bug in npm
-npm install	-g npm@6 || true
-sudo chown -R $USER:$USER ~/.npm
-npm install -g npm@6
-rm -rf ~/.npm/*
-npm -v
-
-yarn global add flip-table
-sudo apt-get update
-ycm-install --ts-completer
-sudo rm -rf /var/lib/apt/lists/*
-sudo rm -rf ~/.cache/yarn/*
+NODENV_ROOT=/home/albandiguer/.nodenv
+nodenv install "$1"
+nodenv global "$1"

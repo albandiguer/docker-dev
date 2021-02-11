@@ -1,5 +1,5 @@
-ARG BASE_TAG=focal
+ARG BASE_TAG=latest
 
-FROM aghost7/nodejs-dev-base:$BASE_TAG
+FROM albandiguer/nodejs-dev-base:$BASE_TAG
 
-RUN nodejs-install.sh 12
+RUN nodejs-install.sh 12.20.1
