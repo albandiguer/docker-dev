@@ -51,7 +51,7 @@ command Bd bp|bd #
 
 " Enable clipboard. Can use x11 forwarding or socket mounting to
 " make host clipboard accessible by the container.
-set clipboard+=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 " Using the blazing fast ag search tool for lgrep calls instead.
 set grepprg=ag\ --nogroup\ --nocolor
@@ -76,6 +76,9 @@ map Q <Nop> " disable Ex mode
 
 " Remap leader
 let mapleader=","
+
+" Copy to system clipboard
+map <leader>y "+y
 
 set showmatch " when a bracket is inserted, briefly show the matching one
 

@@ -26,7 +26,6 @@ sudo pip3 install neovim
 
 # Add environment variables and `vim` alias.
 cat /tmp/bashrc-additions.sh >> "$HOME/.zshrc"
-
 sudo rm /tmp/bashrc-additions.sh
 
 # Install vim-plug
@@ -41,7 +40,6 @@ apt-install exuberant-ctags
 
 # Install editorconfig cli needed for vim plugin
 apt-install editorconfig
-
 
 # Install the silver searcher
 apt-install silversearcher-ag
