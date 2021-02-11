@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 set -ex
 
@@ -17,9 +17,6 @@ sudo chown "$USER:$USER" "$HOME/.editorconfig"
 
 # Install neovim
 apt-install neovim -y
-
-# Install neovim python api.
-sudo pip3 install neovim
 
 # Python 3 api required for denite.vim
 apt-install python3-pip
@@ -44,6 +41,10 @@ apt-install exuberant-ctags
 
 # Install editorconfig cli needed for vim plugin
 apt-install editorconfig
+
+
+# Install the silver searcher
+apt-install silversearcher-ag
 
 # Cleanups
 sudo apt-get purge software-properties-common -y

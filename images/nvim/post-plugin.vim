@@ -105,9 +105,3 @@ map <C-b> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 " close vim if only open window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIM MARKDOWN PREVIEW
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let vim_markdown_preview_github=1
