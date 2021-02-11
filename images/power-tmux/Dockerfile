@@ -13,6 +13,7 @@ COPY ./tmux.conf "$HOME/.config/tmux/tmux.conf"
 COPY ./bashrc-additions.sh /tmp/bashrc-additions.sh
 
 ENV TMUX_VERSION 3.1
+ENV TMUX_PLUGIN_MANAGER_PATH "$HOME/.tmux/plugins/"
 
 COPY ./build.sh /tmp/build.sh
 

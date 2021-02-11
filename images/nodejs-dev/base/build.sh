@@ -10,8 +10,6 @@ for file in plugin post-plugin; do
 	sudo rm "/tmp/$file.vim"
 done
 
-NODENV_ROOT="$HOME/.nodenv"
-
 # check code from github
 git clone https://github.com/nodenv/nodenv.git $NODENV_ROOT
 git clone https://github.com/nodenv/node-build.git "$NODENV_ROOT"/plugins/node-build

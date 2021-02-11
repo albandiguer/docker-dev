@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 set -ex
 
-nodenv install "$1"
-nodenv global "$1"
+# NODENV_ROOT=/home/albandiguer/.nodenv
+/home/albandiguer/.nodenv/bin/nodenv install "$1"
+/home/albandiguer/.nodenv/bin/nodenv global "$1"

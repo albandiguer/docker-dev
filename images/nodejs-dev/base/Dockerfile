@@ -14,6 +14,8 @@ COPY ./plugin.vim /tmp/plugin.vim
 
 COPY ./post-pluggin.vim /tmp/post-plugin.vim
 
+ENV NODENV_ROOT "$HOME/.nodenv"
+
 COPY ./build.sh /tmp/build.sh
 
 # COPY ./repl /usr/local/bin/repl
