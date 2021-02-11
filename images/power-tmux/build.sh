@@ -34,6 +34,7 @@ install-tmux() {
 
 install-tmux-plugin-manager() {
   git clone https://github.com/tmux-plugins/tpm /home/albandiguer/.tmux/plugins/tpm
+  /home/albandiguer/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
 
 install-powerline() {
