@@ -25,7 +25,7 @@ sudo pip3 install setuptools
 sudo pip3 install neovim
 
 # Add environment variables and `vim` alias.
-cat /tmp/bashrc-additions.sh >> "$HOME/.bashrc"
+cat /tmp/bashrc-additions.sh >> "$HOME/.zshrc"
 
 sudo rm /tmp/bashrc-additions.sh
 
