@@ -32,6 +32,10 @@ install-tmux() {
 	popd
 }
 
+install-tmux-plugin-manager() {
+  git clone https://github.com/tmux-plugins/tpm /home/albandiguer/.tmux/plugins/tpm
+}
+
 install-powerline() {
 	# POWER TMUX
 	sudo pip3 install powerline-status
@@ -53,14 +57,15 @@ sudo apt-get update
 # install-powerline
 
 install-tmux
+install-tmux-plugin-manager
 
 # Add fzf fuzzy finder
 git clone https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
 # Add bashrc addons for powerline and etc.
-cat /tmp/bashrc-additions.sh >> "$HOME/.bashrc"
-sudo rm /tmp/bashrc-additions.sh
+# cat /tmp/bashrc-additions.sh >> "$HOME/.bashrc"
+# sudo rm /tmp/bashrc-additions.sh
 
 # Cleanup cache
 sudo apt-get clean
