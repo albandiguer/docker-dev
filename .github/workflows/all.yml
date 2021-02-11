@@ -1,4 +1,4 @@
-name: Build all
+name: All
 
 # Run this workflow every time a new commit pushed to your repository
 on:

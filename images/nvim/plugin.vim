@@ -10,7 +10,6 @@ Plug 'junegunn/fzf.vim' " fuzzy search
 Plug 'schickling/vim-bufonly' "Close inactive buffers
 Plug 'mileszs/ack.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'heavenshell/vim-jsdoc', { 'do': 'make install', 'for': ['javascript', 'typescript', 'javascript.jsx']}
 Plug 'tmhedberg/matchit' " Jump to end of block
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim for example

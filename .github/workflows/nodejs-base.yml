@@ -1,4 +1,4 @@
-name: Build NodeJS dev base
+name: NodeJS base
 
 # Run this workflow every time a new commit pushed to your repository
 on:

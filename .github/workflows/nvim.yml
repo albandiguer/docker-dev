@@ -1,4 +1,4 @@
-name: Build Nvim
+name: Nvim
 
 # Run this workflow every time a new commit pushed to your repository
 on:

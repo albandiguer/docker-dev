@@ -1,4 +1,4 @@
-name: Build ubuntu-dev-base
+name: Ubuntu base
 
 # Run this workflow every time a new commit pushed to your repository
 on:
