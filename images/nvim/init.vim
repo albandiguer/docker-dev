@@ -18,6 +18,8 @@ call plug#end()
 "
 "	~~ General Configurations ~~
 "
+" Remap leader
+let mapleader=","
 
 " Add the column number
 set ruler
@@ -74,8 +76,6 @@ set nofixendofline
 
 map Q <Nop> " disable Ex mode
 
-" Remap leader
-let mapleader=","
 
 " Copy to system clipboard
 map <leader>y "+y

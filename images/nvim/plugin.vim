@@ -16,3 +16,4 @@ Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim for example
 Plug 'mattn/gist-vim'
 Plug 'lodestone/lodestone.vim'
 Plug 'junegunn/vim-slash' " Automatically clear search highlight
+Plugin 'duythinht/vim-coffee' " https://github.com/duythinht/vim-coffee

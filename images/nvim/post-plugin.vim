@@ -1,8 +1,9 @@
 
 " Load colors! On the initial install this will error out, so make it silent
 " so it installs without issues.
-silent! colorscheme lodestone
-set background=dark
+silent! colorscheme coffee
+" use the current background's color to clear the screen.
+set t_ut=
 
 " Use spaces instead just for yaml
 autocmd Filetype yaml setl expandtab
