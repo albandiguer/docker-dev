@@ -48,16 +48,16 @@ RUN bash /tmp/build.sh && \
 
 WORKDIR $HOME
 
-COPY ./inputrc "$HOME/.inputrc"
+COPY ./.inputrc "$HOME/.inputrc"
 RUN sudo chown "$USER":"$USER" "$HOME/.inputrc"
 
-COPY ./zshrc "$HOME/.zshrc"
+COPY ./.zshrc "$HOME/.zshrc"
 RUN sudo chown "$USER":"$USER" "$HOME/.zshrc"
 
-COPY ./gitconfig "$HOME/.gitconfig"
+COPY ./.gitconfig "$HOME/.gitconfig"
 RUN sudo chown "$USER":"$USER" "$HOME/.gitconfig"
 
-COPY ./gitignore "$HOME/.gitignore"
+COPY ./.gitignore "$HOME/.gitignore"
 RUN sudo chown "$USER":"$USER" "$HOME/.gitignore"
 
 # Remove bash files
