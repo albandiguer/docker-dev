@@ -13,5 +13,8 @@ COPY plugin.vim "$HOME/.config/nvim/plugin.vim"
 COPY post-plugin.vim "$HOME/.config/nvim/post-plugin.vim"
 COPY ./.editorconfig "$HOME/.editorconfig"
 
+COPY ./ackrc "$HOME/.ackrc"
+RUN sudo chown "$USER":"$USER" "$HOME/.ackrc"
+
 RUN /tmp/build.sh && \
 	sudo rm /tmp/build.sh
