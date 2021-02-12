@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # Just want to ignore the node_modules directory. Rest is the same as stock.
 export FZF_CTRL_T_COMMAND="command find -L . \\( -path '*/\\.*' -o -fstype 'dev' -o -fstype 'proc' \\) -prune \
 		-o -path '*/node_modules/*' -prune \
