@@ -10,6 +10,11 @@ for file in plugin post-plugin; do
 	sudo rm "/tmp/$file.vim"
 done
 
+
+# TODO, mad ugly, try to make node accessible and executable
+sudo ln -s $HOME/.nodenv/shims/node /usr/bin/node
+sudo chmod +x /usr/bin/node
+
 # Install vim plugins
 nvim +PlugInstall +qall
 
