@@ -33,4 +33,9 @@ nvim +PlugInstall +qall
 
 # Install coc extensions
 # https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
-nvim -c  'CocInstall -sync coc-json coc-tsserver coc-html|q' +qall
+nvim +'CocInstall -sync coc-json coc-tsserver coc-html|q' +qall
+# https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632482922
+nvim +CocUpdateSync +qall
+
+# Add local deps binaries to path
+echo 'export PATH=./node_modules/.bin:$PATH' >> "$HOME/.zshrc"
