@@ -14,6 +14,8 @@ Plug 'tmhedberg/matchit' " Jump to end of block
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim for example
 Plug 'mattn/gist-vim'
-Plug 'lodestone/lodestone.vim'
 Plug 'junegunn/vim-slash' " Automatically clear search highlight
-Plug 'duythinht/vim-coffee' " https://github.com/duythinht/vim-coffee
+
+Plug 'lodestone/lodestone.vim'
+" Plug 'duythinht/vim-coffee' " https://github.com/duythinht/vim-coffee
+Plug 'HenryNewcomer/vim-theme-papaya' " https://github.com/HenryNewcomer/vim-theme-papaya

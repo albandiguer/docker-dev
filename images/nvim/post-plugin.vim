@@ -1,7 +1,7 @@
 
 " Load colors! On the initial install this will error out, so make it silent
 " so it installs without issues.
-silent! colorscheme coffee
+silent! colorscheme papaya
 " use the current background's color to clear the screen.
 set t_ut=
 
@@ -69,6 +69,8 @@ let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace']
       \ }
 let g:ale_python_black_options = '--line-length 79' " line length 88 by default
+" TODO look into COC/ALE integration, https://github.com/dense-analysis/ale#faq-coc-nvim
+let g:ale_disable_lsp = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

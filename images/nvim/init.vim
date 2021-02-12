@@ -77,6 +77,23 @@ map Q <Nop> " disable Ex mode
 
 " Copy to system clipboard
 map <leader>y "+y
+" Insert a hash rocket with <c-l>
+imap <C-l> <space>=>
+" ESC = <c-c> in insert mode
+imap <c-c> <esc>
+" Clear the search buffer when hitting return
+nnoremap <cr> :nohlsearch<cr>
+" switch previous buffer
+nnoremap <leader><leader> <c-^>
+" select all
+map <C-a> <esc>ggVG<CR>
+" awesome paste, lets see
+xnoremap p pgvy
+
+" easy lopen lclose
+nmap ( :lopen<CR>
+nmap ) :lclose<CR>
+
 
 set showmatch " when a bracket is inserted, briefly show the matching one
 
