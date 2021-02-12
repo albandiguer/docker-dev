@@ -78,6 +78,9 @@ sudo usermod -s /usr/bin/zsh albandiguer
 # add https://github.com/ohmyzsh/ohmyzsh, this install in /root/
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
+# add docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 # cache is useless to keep
 apt-get autoremove -y
