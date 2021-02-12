@@ -37,6 +37,7 @@ ENV TERM screen-256color
 
 ENV DOCKER_CLI_SHA256 "0a52d21eace395e6077b4c99b8ff96ffb9203ba6be1bdffcfb716bea645f5745"
 ENV DOCKER_CLI_VERSION "19.03.5"
+ENV DOCKER_HOST "/var/run/docker.sock"
 
 ENV ZSH "$HOME/.oh-my-zsh"
 
