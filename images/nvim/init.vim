@@ -46,8 +46,6 @@ set numberwidth=5 " number of columns used for line number display
 set showtabline=2
 set winwidth=79
 
-set nocursorline
-
 " This will close the current buffer without closing the window
 command Bd bp|bd #
 
