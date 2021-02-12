@@ -30,3 +30,7 @@ sudo rm -rf /var/lib/apt/lists/*
 
 # Install vim plugins
 nvim +PlugInstall +qall
+
+# Install coc extensions
+# https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+nvim -c  'CocInstall -sync coc-json coc-tsserver coc-html|q' +qall

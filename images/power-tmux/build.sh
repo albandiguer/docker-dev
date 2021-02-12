@@ -52,7 +52,7 @@ install-tmux-plugin-manager
 
 # Add fzf fuzzy finder
 git clone https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --all
+~/.fzf/install --all --no-bash --no-fish
 
 # Cleanup cache
 sudo apt-get clean
