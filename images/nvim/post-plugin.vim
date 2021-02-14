@@ -77,7 +77,7 @@ let g:ale_disable_lsp = 1
 " FZF config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap ; :Buffers<CR>
-nmap <Leader>f :Files<CR>
+nmap <Leader>f :GFiles<CR>
 nmap <Leader>r :Tags<CR>
 nmap <Leader>b :Buffers<CR>
 
