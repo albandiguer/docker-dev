@@ -35,3 +35,8 @@ nvim +PlugInstall +qall
 
 # Add local deps binaries to path
 echo 'export PATH=./node_modules/.bin:$PATH' >> "$HOME/.zshrc"
+
+
+# Add node-js ohmyzsh plugins + source again ohmyzsh
+echo 'plugins+=(node)' >> "$HOME/.zshrc"
+echo 'source $ZSH/oh-my-zsh.sh' >> "$HOME/.zshrc"

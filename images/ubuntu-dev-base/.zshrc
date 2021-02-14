@@ -35,26 +35,15 @@ alias vi='nvim .'
 alias vim="nvim"
 alias c='clear'
 alias g='git'
-alias k='kubectl'
-alias tf='terraform'
-alias stocks='mop'
 
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export EDITOR='vim'
 
 plugins=(
-  aws
   colored-man-pages
   docker
-  docker-compose
   git
-  node
-  npm
-  npx
-  pip
-  postgres
-  stack
-  terraform
 )
 
+# All the plugins should go before oh-my-zsh is sourced
 source $ZSH/oh-my-zsh.sh
