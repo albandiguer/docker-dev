@@ -1,14 +1,13 @@
-
-
-" ~                                     ~ "
 " ~ NodeJS-Focused Neovim Configuration ~ "
-" ~ By: Jonathan Boudreau               ~ "
-" ~                                     ~ "
+" ~ By: Alban Diguer    
 
-"
+
+" disable all LSP features in ALE, so ALE doesn't try to provide LSP features
+" already provided by coc.nvim, such as auto-completion.  let
+" g:ale_disable_lsp = 1 to your vimrc file, before plugins are loaded.
+let g:ale_disable_lsp = 1
+
 "	~~ Plugin Load ~~
-"
-
 call plug#begin("~/.config/nvim/plugged")
 
 source ~/.config/nvim/plugin.vim
