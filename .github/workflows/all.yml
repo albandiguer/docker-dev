@@ -123,6 +123,7 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
   nodejs-erbium:
+    if: ${{ false }} # disabled
     # Name the Job
     name: Erbium
     needs: nodejs-base
