@@ -37,6 +37,7 @@ nvim +PlugInstall +qall
 echo 'export PATH=./node_modules/.bin:$PATH' >> "$HOME/.zshrc"
 
 
-# Add node-js ohmyzsh plugins + source again ohmyzsh
-echo 'plugins+=(node)' >> "$HOME/.zshrc"
-echo 'source $ZSH/oh-my-zsh.sh' >> "$HOME/.zshrc"
+# Add node-js specific ohmyzsh plugins + source again ohmyzsh
+# XXX no plugins are interesting for now
+# echo 'plugins+=()' >> "$HOME/.zshrc"
+# echo 'source $ZSH/oh-my-zsh.sh' >> "$HOME/.zshrc"
