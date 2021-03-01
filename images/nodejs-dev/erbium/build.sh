@@ -15,10 +15,12 @@ done
 sudo ln -s $HOME/.nodenv/shims/node /usr/bin/node
 sudo chmod +x /usr/bin/node
 
+# Make npm available for vim-jsdoc hook
+export PATH="/home/albandiguer/.nodenv/shims":$PATH
 # Install vim plugins
 nvim +PlugInstall +qall
 
-# Install coc extensions
+# INSTALL COC EXTENSIONS
 # https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
 nvim +'CocInstall -sync coc-json coc-tsserver coc-html|q' +qall
 # https://github.com/neoclide/coc.nvim/issues/450#issuecomment-632482922

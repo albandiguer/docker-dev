@@ -15,6 +15,8 @@ done
 sudo ln -s $HOME/.nodenv/shims/node /usr/bin/node
 sudo chmod +x /usr/bin/node
 
+# Make npm available for vim-jsdoc hook
+export PATH="/home/albandiguer/.nodenv/shims":$PATH
 # Install vim plugins
 nvim +PlugInstall +qall
 
