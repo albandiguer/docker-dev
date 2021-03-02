@@ -19,3 +19,4 @@ Plug 'junegunn/vim-slash' " Automatically clear search highlight
 Plug 'lodestone/lodestone.vim'
 " Plug 'duythinht/vim-coffee' " https://github.com/duythinht/vim-coffee
 Plug 'HenryNewcomer/vim-theme-papaya' " https://github.com/HenryNewcomer/vim-theme-papaya
+Plug 'NLKNguyen/papercolor-theme' " Light theme
