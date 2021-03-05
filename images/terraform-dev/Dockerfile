@@ -6,6 +6,8 @@ USER albandiguer
 
 ENV IMAGE_CLASS terraform
 
+COPY ./tf-coc-settings.json "$HOME/.config/nvim/coc-settings.json"
+
 COPY ./plugin.vim /tmp/plugin.vim
 COPY ./post-plugin.vim /tmp/post-plugin.vim
 
