@@ -1,10 +1,10 @@
 ARG BASE_TAG=latest
 
-FROM albandiguer/nodejs-dev-base:$BASE_TAG
+FROM albandiguer/nvim:$BASE_TAG
 
 USER albandiguer
 
-RUN nodejs-install.sh 12.20.1
+ENV IMAGE_CLASS terraform
 
 COPY ./plugin.vim /tmp/plugin.vim
 COPY ./post-plugin.vim /tmp/post-plugin.vim
