@@ -1,6 +1,6 @@
 ARG BASE_TAG=latest
 
-FROM albandiguer/nvim:$BASE_TAG
+FROM albandiguer/nodejs-dev-base:$BASE_TAG
 
 USER albandiguer
 

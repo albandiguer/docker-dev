@@ -184,7 +184,7 @@ jobs:
   terraform:
     # Name the Job
     name: Terraform
-    needs: nvim
+    needs: nodejs-base
     # Set the type of machine to run on
     runs-on: ubuntu-latest
 
