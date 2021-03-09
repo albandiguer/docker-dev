@@ -1,6 +1,5 @@
 " ~ NodeJS-Focused Neovim Configuration ~ "
-" ~ By: Alban Diguer    
-
+" ~ By: Alban Diguer
 
 " disable all LSP features in ALE, so ALE doesn't try to provide LSP features
 " already provided by coc.nvim, such as auto-completion.  let
@@ -9,14 +8,10 @@ let g:ale_disable_lsp = 1
 
 "	~~ Plugin Load ~~
 call plug#begin("~/.config/nvim/plugged")
-
 source ~/.config/nvim/plugin.vim
-
 call plug#end()
 
-"
 "	~~ General Configurations ~~
-"
 " Remap leader
 let mapleader=","
 
