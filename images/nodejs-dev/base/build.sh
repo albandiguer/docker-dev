@@ -2,7 +2,6 @@
 
 set -ex
 
-
 HOME="/home/albandiguer"
 
 for file in plugin post-plugin; do
@@ -32,10 +31,8 @@ sudo rm -rf /var/lib/apt/lists/*
 # Install vim plugins, caveat, no node available at this stage
 nvim +PlugInstall +qall
 
-
 # Add local deps binaries to path
 echo 'export PATH=./node_modules/.bin:$PATH' >> "$HOME/.zshrc"
-
 
 # Add node-js specific ohmyzsh plugins + source again ohmyzsh
 # XXX no plugins are interesting for now

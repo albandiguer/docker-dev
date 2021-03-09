@@ -5,16 +5,12 @@ set -ex
 HOME="/home/albandiguer"
 
 sudo apt-get update
-sudo apt-get install -y --no-install-recommends software-properties-common
 
 apt-install () {
 	sudo apt-get install -y --no-install-recommends "$@"
 }
 
-for file in plugin post-plugin; do
-	cat "/tmp/$file.vim" >> "$HOME/.config/nvim/$file.vim"
-	sudo rm "/tmp/$file.vim"
-done
+apt-install software-properties-common
 
 # Install golang (required by terraform lsp)
 VERSION="1.16" # go version
@@ -40,6 +36,12 @@ apt-install terraform
 
 # Install tflint
 curl https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash -
+
+for file in plugin post-plugin; do
+	cat "/tmp/$file.vim" >> "$HOME/.config/nvim/$file.vim"
+	sudo rm "/tmp/$file.vim"
+done
+
 
 # Refresh plugin + coc
 nvim +PlugInstall +CocUpdateSync +qall
