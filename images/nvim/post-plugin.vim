@@ -66,7 +66,7 @@ let g:ale_fixers = {
       \ 'haskell': ['brittany'],
       \ 'python': ['black'],
       \ 'sql': ['sqlfmt'],
-      \ 'terraform': ['fmt'],
+      \ 'terraform': ['terraform'],
       \ '*': ['remove_trailing_lines', 'trim_whitespace']
       \ }
 let g:ale_python_black_options = '--line-length 79' " line length 88 by default
